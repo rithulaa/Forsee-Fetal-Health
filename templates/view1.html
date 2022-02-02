@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>display results</title>
+    <style>
+    h1 {
+    margin: 1em 0 0.5em 0;
+    color: #343434;
+    font-weight: bold;
+    font-family: 'American Typewriter';
+    font-size: 40px;
+    line-height: 42px;
+    text-transform: uppercase;
+    
+    text-align: center;
+}
+
+
+h3 {
+    margin: 1em 0 0.5em 0;
+    color: black;
+    font-size: 25px;
+    line-height: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Lucida Console';
+    padding-left: 10px;
+    letter-spacing: 0.5px;
+   
+}
+
+h2{
+    color: black;
+    font-weight: bold;
+    font-family: 'American Typewriter';
+    font-size: 40px;
+    line-height: 42px;
+    text-transform: uppercase;
+    text-align: center;
+}
+div.transbox {
+  margin: 30px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  background: rgba(204, 204, 204, 0.6)
+}
+
+body{
+   height:500px; 
+    background-size: cover;
+    background-position:center; 
+    background-repeat: no-repeat;
+      background-image: url({{ url_for('static', filename='baby.jpg') }})       
+        }
+        
+    </style>
+</head>
+<body>
+<h1>FETAL HEALTH</h1>
+
+
+  <div class="transbox">
+  <h3> Baseline Heart Rate : {{ bh }}</h3>
+<h3> Fetal Movement : {{ fm }}</h3>
+<h3> Uterine Contractions : {{ uc }}</h3>
+<h3> Accelerations : {{ a }}</h3>
+<h3> Prolongued Decelerations : {{ pd }}</h3>
+<h3> Abnormal long term variability(%) : {{ altv }}</h3>
+  </div>
+
+
+
+
+<div class="prediction">
+    <h2>Status : {{ res }}</h2>
+
+</div>
+</body>
+</html>
